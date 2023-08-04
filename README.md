@@ -24,7 +24,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
    ```sh
    git clone https://github.com/mishalmsb/swapi.git
    ```
-2. Install NPM packages
+2. Go to the project folder
    ```sh
    cd swapi
    ```
