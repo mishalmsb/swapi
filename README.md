@@ -49,6 +49,14 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
   - [ ] Create a new BE application?
 - [ ] Improve UI
 
+<!-- CONTACT -->
+
+## Contact
+
+Mishal - mishalmsb@gmail.com
+
+Project Link: [https://github.com/mishalmsb/swapi](https://github.com/mishalmsb/swapi)
+
 <!-- MARKDOWN LINKS & IMAGES -->
 
 [Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
