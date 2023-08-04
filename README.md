@@ -57,7 +57,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
 ## Contact
 
-Mishal - mishalmsb@gmail.com
+Mishal - mishalmsb@gmail.com - [https://www.mishalmsb.com](https://www.mishalmsb.com)
 
 Project Link: [https://github.com/mishalmsb/swapi](https://github.com/mishalmsb/swapi)
 
