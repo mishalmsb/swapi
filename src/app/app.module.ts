@@ -6,11 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { CoreModule } from '@core/core.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgToastModule } from 'ng-angular-popup';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, CoreModule, NgbModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, CoreModule, NgToastModule],
   providers: [],
   bootstrap: [AppComponent],
 })
