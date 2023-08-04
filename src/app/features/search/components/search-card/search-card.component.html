@@ -1,15 +1,12 @@
-<a
-  class="card border-0"
-  [style.background-image]="'url(' + (image$ | async) + ')'"
-  [routerLink]="['/detail', contentType, dataId]"
-  *ngIf="cardContent"
->
-  <div class="card-img-overlay d-flex flex-column">
+<div class="card border-0" [style.background-image]="'url(' + (image$ | async) + ')'" *ngIf="cardContent">
+  <div class="fav">
     <app-favourite
       [dataId]="dataId"
       [contentType]="contentType"
       *ngIf="dataId && contentType"
     ></app-favourite>
+  </div>
+  <a class="card-img-overlay d-flex flex-column" [routerLink]="['/detail', contentType, dataId]">
     <div class="card-body">
       <h4 class="card-title text-dark mt-0">
         {{ cardContent.name }}
@@ -25,5 +22,5 @@
         ></app-icon-by-type>
       </div>
     </div>
-  </div>
-</a>
+  </a>
+</div>

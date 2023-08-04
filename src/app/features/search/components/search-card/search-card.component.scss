@@ -25,12 +25,16 @@
     transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
   }
   .card-img-overlay {
+    z-index: 1;
     transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
     background: linear-gradient(
       0deg,
       rgba(255, 186, 33, 0.3785889356) 0%,
       rgb(255 186 33 / 55%) 100%
     );
+  }
+  .fav {
+    z-index: 2;
   }
 }
 
