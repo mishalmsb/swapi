@@ -23,7 +23,6 @@ export class FavouriteComponent {
   }
 
   toogleFavourite() {
-    console.log(this.dataId);
     if (this._isFavourite) {
       this._favouriteService.removeFromFavourites(this.dataId, this.contentType);
     }

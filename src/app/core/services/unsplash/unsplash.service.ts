@@ -30,7 +30,6 @@ export class UnsplashService {
             observer.complete();
           },
           error: () => {
-            console.log('error');
             observer.next(dummyImage);
             observer.complete();
           },

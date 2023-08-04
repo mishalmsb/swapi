@@ -54,7 +54,6 @@ export class FavouriteService {
   }
 
   updateFavourites(favourites: IFavourite[]) {
-    console.log(favourites);
     this._localStorageService.set(this.sessionStorageName, favourites);
     this._favourites$.next(favourites);
   }
