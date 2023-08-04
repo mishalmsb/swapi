@@ -41,10 +41,12 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
 - [ ] Unit Tests
 - [ ] Improve Detail Page
+- [ ] Search Page Use Infinite Scroll
 - [ ] Add My Favourites Feature
 - [ ] Implement Authentication
 - [ ] Improve Bootstrap Usage
   - [ ] Remove not needed imports
+- Replace ng-angular-popup for bootstrap
 - [ ] Replace Unsplash API with a More Accurate Souce
   - [ ] Create a new BE application?
 - [ ] Improve UI
