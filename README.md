@@ -1,6 +1,7 @@
 <!-- ABOUT THE PROJECT -->
-
 ## Angular application using Star Wars API
+
+![Screenshot 2023-08-04 at 16 25 55](https://github.com/mishalmsb/swapi/assets/18425871/2be7bdae-261c-40b9-99a6-f090b5a16194)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
 
