@@ -37,7 +37,7 @@ export class FavouriteService {
       return;
     }
     const favourites = [...this._favourites$.value, fav];
-    this._notificationService.showSuccessMessage(`${fav.name} Added To Favourites Successfully`);
+    this._notificationService.showSuccessMessage(`"${fav.name}" Added To Favourites Successfully`);
     this.updateFavourites(favourites);
   }
 
@@ -46,7 +46,7 @@ export class FavouriteService {
       return;
     }
     const favourites = this._favourites$.value.filter((value) => value.id !== id && value.type === type);
-    this._notificationService.showSuccessMessage(`${name} Removed From Favourites Successfully`);
+    this._notificationService.showSuccessMessage(`"${name}" Removed From Favourites Successfully`);
     this.updateFavourites(favourites);
   }
 
