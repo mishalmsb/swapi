@@ -1,4 +1,5 @@
 <!-- ABOUT THE PROJECT -->
+
 ## Angular application using Star Wars API
 
 ![Screenshot 2023-08-04 at 16 25 55](https://github.com/mishalmsb/swapi/assets/18425871/2be7bdae-261c-40b9-99a6-f090b5a16194)
@@ -47,7 +48,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 - [ ] Implement Authentication
 - [ ] Improve Bootstrap Usage
   - [ ] Remove not needed imports
-- Replace ng-angular-popup for bootstrap
+- [ ] Replace ng-angular-popup for bootstrap
 - [ ] Replace Unsplash API with a More Accurate Souce
   - [ ] Create a new BE application?
 - [ ] Improve UI
