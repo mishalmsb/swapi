@@ -2,6 +2,7 @@
   <div class="fav">
     <app-favourite
       [dataId]="dataId"
+      [name]="cardContent.name"
       [contentType]="contentType"
       *ngIf="dataId && contentType"
     ></app-favourite>

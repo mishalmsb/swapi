@@ -3,6 +3,7 @@ import { ContentType } from '@core/enums/type';
 import { IFavourite } from '@core/models/favourite';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { LocalStorageService } from '../local-storage/local-storage.service';
+import { NotificationService } from '../notification/notification.service';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,7 @@ export class FavouriteService {
 
   sessionStorageName = 'swapi-favourites';
 
-  constructor() {}
+  constructor(private _notificationService: NotificationService) {}
 
   private loadFavourites(): void {
     const favouritesFromStorage = this._localStorageService.get<IFavourite[]>(this.sessionStorageName);
@@ -31,25 +32,21 @@ export class FavouriteService {
     return this._favourites$.asObservable();
   }
 
-  addToFavourites(id: number, type: ContentType) {
+  addToFavourites(fav: IFavourite) {
     if (!this._favourites$.value) {
       return;
     }
-    const favourites = [
-      ...this._favourites$.value,
-      {
-        type,
-        id,
-      },
-    ];
+    const favourites = [...this._favourites$.value, fav];
+    this._notificationService.showSuccessMessage(`${fav.name} Added To Favourites Successfully`);
     this.updateFavourites(favourites);
   }
 
-  removeFromFavourites(id: number, type: ContentType) {
+  removeFromFavourites({ id, name, type }: IFavourite) {
     if (!this._favourites$.value) {
       return;
     }
     const favourites = this._favourites$.value.filter((value) => value.id !== id && value.type === type);
+    this._notificationService.showSuccessMessage(`${name} Removed From Favourites Successfully`);
     this.updateFavourites(favourites);
   }
 

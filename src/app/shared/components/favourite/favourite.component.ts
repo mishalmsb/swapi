@@ -13,6 +13,7 @@ import { Observable } from 'rxjs';
 export class FavouriteComponent {
   @Input() dataId: number;
   @Input() contentType: ContentType;
+  @Input() name: string;
   private _favouriteService: FavouriteService = inject(FavouriteService);
   favourites$: Observable<IFavourite[] | null> = this._favouriteService.getFavourites();
   _isFavourite: boolean;
@@ -23,9 +24,14 @@ export class FavouriteComponent {
   }
 
   toogleFavourite() {
+    const fav: IFavourite = {
+      id: this.dataId,
+      type: this.contentType,
+      name: this.name,
+    };
     if (this._isFavourite) {
-      this._favouriteService.removeFromFavourites(this.dataId, this.contentType);
+      this._favouriteService.removeFromFavourites(fav);
     }
-    this._favouriteService.addToFavourites(this.dataId, this.contentType);
+    this._favouriteService.addToFavourites(fav);
   }
 }
