@@ -1,0 +1,57 @@
+@import "../../../../assets/styles/for-components/breakpoints";
+
+.navbar {
+  .navbar-container {
+    .navbar-brand {
+      img {
+        height: 65px;
+      }
+    }
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    .navbar-container {
+      position: relative;
+      .navbar-brand {
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        transform: translate(25%, -50%);
+        img {
+          height: 80px;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    .navbar-container {
+      .navbar-brand {
+        transform: translate(50%, -50%);
+      }
+    }
+  }
+}
+
+.input-container {
+  width: 100%;
+  .input-group {
+    .form-control {
+      border-right: none;
+    }
+    .btn {
+      border-color: var(--bs-border-color);
+      border-left: none;
+      background-color: var(--bs-body-bg);
+      color: var(--bs-border-color);
+      &:hover {
+        background-color: var(--bs-body-bg);
+        color: var(--bs-primary);
+      }
+    }
+  }
+  @include media-breakpoint-up(md) {
+    width: auto;
+  }
+}

@@ -1,0 +1,26 @@
+<nav class="navbar py-3 py-md-5">
+  <div class="container-xxl navbar-container">
+    <a class="navbar-brand" [routerLink]="['/']">
+      <img src="../../../../assets/images/star_wars.svg" alt="Star Wars logo" class="img-fluid logo" />
+    </a>
+    <div class="row justify-content-center flex-grow-1 input-container" *ngIf="filters$ | async as filters">
+      <div class="col-10 col-md-6 col-lg-6">
+        <form (ngSubmit)="search(filters.query)">
+          <div class="input-group">
+            <input
+              class="form-control"
+              name="nav-search"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              [(ngModel)]="filters.query"
+            />
+            <button class="btn btn-outline-primary" type="submit" id="button-addon2">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>

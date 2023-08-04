@@ -1,0 +1,14 @@
+@import "../../../../assets/styles/for-components/breakpoints";
+
+.nav {
+  max-width: 400px;
+  margin: 0 auto;
+  .nav-item {
+    .active {
+      pointer-events: none;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    max-width: 700px;
+  }
+}

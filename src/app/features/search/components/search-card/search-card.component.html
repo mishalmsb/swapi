@@ -1,0 +1,29 @@
+<a
+  class="card border-0"
+  [style.background-image]="'url(' + (image$ | async) + ')'"
+  [routerLink]="['/detail', contentType, dataId]"
+  *ngIf="cardContent"
+>
+  <div class="card-img-overlay d-flex flex-column">
+    <app-favourite
+      [dataId]="dataId"
+      [contentType]="contentType"
+      *ngIf="dataId && contentType"
+    ></app-favourite>
+    <div class="card-body">
+      <h4 class="card-title text-dark mt-0">
+        {{ cardContent.name }}
+      </h4>
+    </div>
+    <div class="card-footer d-flex justify-content-center text-dark">
+      <div class="icon-container fs-3" *ngFor="let spec of cardContent.specs">
+        <app-icon-by-type
+          [contentType]="spec.type"
+          [tooltip]="spec.displayText"
+          [count]="spec.count"
+          class="px-2"
+        ></app-icon-by-type>
+      </div>
+    </div>
+  </div>
+</a>

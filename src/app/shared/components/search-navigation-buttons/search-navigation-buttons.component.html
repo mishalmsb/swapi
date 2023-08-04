@@ -1,0 +1,15 @@
+<ul class="nav nav-pills nav-fill row" *ngIf="filters$ | async as filters">
+  <li
+    class="nav-item col-5 col-sm-4 col-md-2 px-sm-1 mb-2"
+    *ngFor="let contentType of contentTypes | keyvalue"
+  >
+    <a
+      class="btn btn-outline-primary w-100"
+      [routerLink]="['/search', contentType.value]"
+      [queryParams]="filters"
+      [class.active]="activeContentType === contentType.value"
+    >
+      {{ contentType.value | capitalize }}
+    </a>
+  </li>
+</ul>

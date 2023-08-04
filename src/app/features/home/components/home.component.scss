@@ -1,0 +1,25 @@
+.home-container {
+  .logo {
+    animation: 5s forwards logo-fadeout;
+  }
+  @keyframes logo-fadeout {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  .content {
+    animation: ease 10s content-fadein;
+  }
+  @keyframes content-fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

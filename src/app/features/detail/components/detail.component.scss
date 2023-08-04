@@ -1,0 +1,20 @@
+@import "../../../../assets/styles/for-components/breakpoints";
+
+.image-contaier {
+  background-color: var(--bs-primary);
+  padding: 0.25rem;
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  @include media-breakpoint-up(sm) {
+    height: 300px;
+  }
+  @include media-breakpoint-up(md) {
+    height: 400px;
+  }
+  @include media-breakpoint-up(lg) {
+    height: 600px;
+  }
+}

@@ -1,0 +1,18 @@
+<div class="row text-center justify-content-center" *ngIf="data; else loading">
+  <div class="col-12 mb-2">
+    <h1>{{ data.name }}</h1>
+  </div>
+  <div class="col-12 col-lg-12">
+    <div class="image-contaier p-3" [style.background-image]="'url(' + data.image + ')'">
+      <app-favourite
+        [dataId]="dataId"
+        [contentType]="contentType"
+        *ngIf="dataId && contentType"
+      ></app-favourite>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

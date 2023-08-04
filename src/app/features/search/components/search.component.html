@@ -1,0 +1,31 @@
+<app-search-navigation-buttons></app-search-navigation-buttons>
+
+<ng-container *ngIf="(loading$ | async) !== true; else loading">
+  <div class="row mt-5 justify-content-center" *ngIf="data$ | async as data">
+    <ng-container *ngIf="data && data.count; else noResults">
+      <div class="col-12 col-md-6 col-lg-5 mb-4" *ngFor="let result of data.results">
+        <app-search-card [data]="result"></app-search-card>
+      </div>
+      <div class="col-12 d-flex justify-content-center mt-5" *ngIf="filters$ | async as filters">
+        <ngb-pagination
+          [collectionSize]="data.count"
+          [page]="filters.page"
+          (pageChange)="pageChange($event)"
+          [maxSize]="10"
+        ></ngb-pagination>
+      </div>
+    </ng-container>
+  </div>
+</ng-container>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>
+
+<ng-template #noResults>
+  <app-search-not-results></app-search-not-results>
+</ng-template>
+
+<div *ngIf="error$ | async as error">
+  <app-error-message [msg]="error"></app-error-message>
+</div>

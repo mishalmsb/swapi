@@ -1,0 +1,5 @@
+<ng-container *ngIf="favourites$ | async as favourites">
+  <button type="button" class="btn btn-outline-primary" (click)="toogleFavourite()">
+    <i class="fa-star" [ngClass]="isFavourite ? 'fa-solid' : 'fa-regular'"></i>
+  </button>
+</ng-container>
