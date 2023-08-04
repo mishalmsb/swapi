@@ -19,8 +19,7 @@ export class FavouriteComponent {
   _isFavourite: boolean;
 
   get isFavourite() {
-    this._isFavourite = this._favouriteService.isSwapiContentInFavourite(this.dataId, this.contentType);
-    return this._isFavourite;
+    return this._favouriteService.isSwapiContentInFavourite(this.dataId, this.contentType);
   }
 
   toogleFavourite() {
@@ -29,9 +28,6 @@ export class FavouriteComponent {
       type: this.contentType,
       name: this.name,
     };
-    if (this._isFavourite) {
-      this._favouriteService.removeFromFavourites(fav);
-    }
-    this._favouriteService.addToFavourites(fav);
+    this.isFavourite ? this._favouriteService.removeFromFavourites(fav) : this._favouriteService.addToFavourites(fav);
   }
 }
