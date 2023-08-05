@@ -1,10 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ContentType } from '@core/enums/type';
-import { SwapiContentType } from '@core/models/swapi';
 import { SwapiService } from '@core/services/swapi';
 import { UtilService } from '@core/services/util/util.service';
-import { Observable } from 'rxjs';
 import { DetailUtilService } from '../services/detail-util/detail-util.service';
 import { ISwapiDetail } from '../models/detail';
 import { UnsplashService } from '@core/services/unsplash/unsplash.service';
@@ -24,7 +22,7 @@ export class DetailComponent implements OnInit {
 
   constructor(private _swapiService: SwapiService, private _utilsService: UtilService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.contentType = this._utilsService.getContentTypeFromActiveRouteData(this._route.snapshot.data);
     this.dataId = +this._route.snapshot.params['id'];
 
@@ -38,7 +36,7 @@ export class DetailComponent implements OnInit {
     });
   }
 
-  loadImage() {
+  loadImage(): void {
     this._unsplashService.getImage(this.data.name).subscribe({
       next: (image) => {
         this.data.image = image;

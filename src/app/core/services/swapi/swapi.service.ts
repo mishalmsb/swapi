@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ContentType } from '@core/enums/type';
 import { ISearchFilters } from '@core/models/filters';
@@ -23,7 +23,7 @@ export class SwapiService {
     return this._http.get<SwapiContentType>(`${environment.swapiBaseUrl}${contentType}/${id}`).pipe(catchError(this.handleError));
   }
 
-  handleError(error: any) {
+  handleError(error: HttpErrorResponse): Observable<never> {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       // client-side error

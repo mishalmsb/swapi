@@ -1,14 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ContentType } from '@core/enums/type';
-import { IFilm } from '@core/models/film';
-import { IPeople } from '@core/models/people';
-import { IPlanet } from '@core/models/planet';
-import { SwapiContentType } from '@core/models/swapi';
-import { ISpecies } from '@core/models/species';
-import { IStarship } from '@core/models/starship';
-import { IVehicle } from '@core/models/vehicle';
 import { environment } from '@env';
-import { ISearchCard } from '@features/search/models/card';
 import { Data } from '@angular/router';
 
 @Injectable({

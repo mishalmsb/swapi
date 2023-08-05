@@ -11,8 +11,6 @@ import { ISearchCard, ISearchCardSpecs } from '@features/search/models/card';
 
 @Injectable()
 export class SearchUtilService {
-  constructor() {}
-
   mapSwapiContentTypeToCardContent(data: SwapiContentType, contentType: ContentType): ISearchCard {
     switch (contentType) {
       case ContentType.FILMS:

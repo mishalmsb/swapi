@@ -1,7 +1,6 @@
 import { Component, Input, inject } from '@angular/core';
 import { ContentType } from '@core/enums/type';
 import { IFavourite } from '@core/models/favourite';
-import { SwapiContentType } from '@core/models/swapi';
 import { FavouriteService } from '@core/services/favourite/favourite.service';
 import { Observable } from 'rxjs';
 
@@ -18,11 +17,11 @@ export class FavouriteComponent {
   favourites$: Observable<IFavourite[] | null> = this._favouriteService.getFavourites();
   _isFavourite: boolean;
 
-  get isFavourite() {
+  get isFavourite(): boolean {
     return this._favouriteService.isSwapiContentInFavourite(this.dataId, this.contentType);
   }
 
-  toogleFavourite() {
+  toogleFavourite(): void {
     const fav: IFavourite = {
       id: this.dataId,
       type: this.contentType,

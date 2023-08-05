@@ -9,7 +9,7 @@ export class BaseSearchFilters implements IBaseSearchFilters {
   public query: string;
   public page: number;
 
-  constructor(query: string = '', page: number = 1) {
+  constructor(query = '', page = 1) {
     this.query = query;
     this.page = page;
   }

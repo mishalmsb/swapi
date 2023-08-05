@@ -14,7 +14,7 @@ export class IconByTypeComponent {
 
   constructor(private _utilsService: UtilService) {}
 
-  get icon() {
+  get icon(): string {
     return this._utilsService.getIconByType(this.contentType);
   }
 }

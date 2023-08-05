@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ContentType } from '@core/enums/type';
 import { SearchFiltersService } from '@core/services/search/search-filters.service';
 import { Observable, Subject, takeUntil } from 'rxjs';
@@ -7,7 +7,6 @@ import { SearchService } from '../services/search/search.service';
 import { SwapiContentType } from '@core/models/swapi';
 import { IPaginatedResponse } from '@core/models/pagination';
 import { IBaseSearchFilters } from '@core/models/filters';
-import { UnsplashService } from '@core/services/unsplash/unsplash.service';
 import { UtilService } from '@core/services/util/util.service';
 
 @Component({
@@ -39,7 +38,7 @@ export class SearchComponent implements OnInit, OnDestroy {
     this._route.queryParams.subscribe((queryParams) => this._searchFiltersService.setFiltersFromParams(queryParams));
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.filters$.pipe(takeUntil(this.destroyed$)).subscribe((filters) => {
       this._searchService.search({
         ...filters,
@@ -48,7 +47,7 @@ export class SearchComponent implements OnInit, OnDestroy {
     });
   }
 
-  pageChange(page: number) {
+  pageChange(page: number): void {
     this._searchFiltersService.goToPage(page);
   }
 

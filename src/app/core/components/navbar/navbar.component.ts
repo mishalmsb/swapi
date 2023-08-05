@@ -1,7 +1,7 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IBaseSearchFilters } from '@core/models/filters';
 import { SearchFiltersService } from '@core/services/search/search-filters.service';
-import { Observable, Subject, filter, takeUntil } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -15,7 +15,7 @@ export class NavbarComponent {
     this.filters$ = this._searchFiltersService.getFilters();
   }
 
-  search(query: string) {
+  search(query: string): void {
     this._searchFiltersService.onQueryChange(query);
   }
 }

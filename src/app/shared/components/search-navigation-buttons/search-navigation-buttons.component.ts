@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ContentType } from '@core/enums/type';
 import { IBaseSearchFilters } from '@core/models/filters';

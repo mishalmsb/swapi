@@ -28,7 +28,7 @@ export class SearchCardComponent implements OnInit {
     private _utilsService: UtilService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.contentType = this._utilsService.getContentTypeFromActiveRouteData(this._route.snapshot.data);
     this.cardContent = this._searchUtilService.mapSwapiContentTypeToCardContent(this.data, this.contentType);
     this.image$ = this._unsplashService.getImage(this.cardContent.name);

@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { ISearchFilters } from '@core/models/filters';
 import { IPaginatedResponse } from '@core/models/pagination';
 import { SwapiContentType } from '@core/models/swapi';
 import { SwapiService } from '@core/services/swapi';
-import { BehaviorSubject, Observable, Subject, Subscription, catchError, debounceTime } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable()
 export class SearchService {
@@ -28,7 +27,7 @@ export class SearchService {
     return this._data$.asObservable();
   }
 
-  search(filters: ISearchFilters) {
+  search(filters: ISearchFilters): void {
     this._loading$.next(true);
     this._data$.next(null);
     this._error$.next(null);

@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { dummyImage } from '@core/mocks/dummyImages';
 import { IUnsplashPaginatedResponse } from '@core/models/unsplash';
 import { environment } from '@env';
 import { Observable, Observer } from 'rxjs';
-import { dummyImage } from '@core/mocks/dummyImages';
 
 // Todo: Improve service
 // Currently returning dummy image if error

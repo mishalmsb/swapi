@@ -11,8 +11,6 @@ import { ISwapiDetail } from '@features/detail/models/detail';
 
 @Injectable()
 export class DetailUtilService {
-  constructor() {}
-
   mapSwapiContentTypeToDetail(data: SwapiContentType, contentType: ContentType): ISwapiDetail {
     switch (contentType) {
       case ContentType.FILMS:
