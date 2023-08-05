@@ -42,6 +42,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 ## Roadmap
 
 - [ ] Unit Tests
+- [ ] SSR Angular Universar
 - [ ] Improve Detail Page
 - [ ] Search Page Use Infinite Scroll
 - [ ] Add My Favourites Feature
@@ -52,6 +53,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 - [ ] Replace Unsplash API with a More Accurate Souce
   - [ ] Create a new BE application?
 - [ ] Improve UI
+- [ ] Improve Linter
+- [ ] Deploy
 
 <!-- CONTACT -->
 
