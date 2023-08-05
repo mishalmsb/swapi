@@ -16,11 +16,12 @@ export class DetailComponent implements OnInit {
   data: ISwapiDetail;
   contentType: ContentType;
   dataId: number;
+  // TODO: explore inject vs Constructor
   private _route: ActivatedRoute = inject(ActivatedRoute);
   private _detailUtilService: DetailUtilService = inject(DetailUtilService);
   private _unsplashService: UnsplashService = inject(UnsplashService);
-
-  constructor(private _swapiService: SwapiService, private _utilsService: UtilService) {}
+  private _swapiService: SwapiService = inject(SwapiService);
+  private _utilsService: UtilService = inject(UtilService);
 
   ngOnInit(): void {
     this.contentType = this._utilsService.getContentTypeFromActiveRouteData(this._route.snapshot.data);
