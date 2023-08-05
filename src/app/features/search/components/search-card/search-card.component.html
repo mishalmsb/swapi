@@ -1,27 +1,32 @@
-<div class="card border-0" [style.background-image]="'url(' + (image$ | async) + ')'" *ngIf="cardContent">
-  <div class="fav">
-    <app-favourite
-      [dataId]="dataId"
-      [name]="cardContent.name"
-      [contentType]="contentType"
-      *ngIf="dataId && contentType"
-    ></app-favourite>
-  </div>
-  <a class="card-img-overlay d-flex flex-column" [routerLink]="['/detail', contentType, dataId]">
-    <div class="card-body">
-      <h4 class="card-title text-dark mt-0">
-        {{ cardContent.name }}
-      </h4>
+<ng-container *ngIf="cardContent && (image$ | async) as image; else loading">
+  <div class="card border-0" [style.background-image]="'url(' + image + ')'">
+    <div class="fav">
+      <app-favourite
+        [dataId]="dataId"
+        [name]="cardContent.name"
+        [contentType]="contentType"
+        *ngIf="dataId && contentType"
+      ></app-favourite>
     </div>
-    <div class="card-footer d-flex justify-content-center text-dark">
-      <div class="icon-container fs-3" *ngFor="let spec of cardContent.specs">
-        <app-icon-by-type
-          [contentType]="spec.type"
-          [tooltip]="spec.displayText"
-          [count]="spec.count"
-          class="px-2"
-        ></app-icon-by-type>
+    <a class="card-img-overlay d-flex flex-column" [routerLink]="['/detail', contentType, dataId]">
+      <div class="card-body">
+        <h4 class="card-title text-dark mt-0">
+          {{ cardContent.name }}
+        </h4>
       </div>
-    </div>
-  </a>
-</div>
+      <div class="card-footer d-flex justify-content-center text-dark">
+        <div class="icon-container fs-3" *ngFor="let spec of cardContent.specs">
+          <app-icon-by-type
+            [contentType]="spec.type"
+            [tooltip]="spec.displayText"
+            [count]="spec.count"
+            class="px-2"
+          ></app-icon-by-type>
+        </div>
+      </div>
+    </a>
+  </div>
+</ng-container>
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>
